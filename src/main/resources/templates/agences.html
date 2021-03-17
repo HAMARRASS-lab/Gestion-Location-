@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>Gestion Loc</title>
+</head>
+<body>
+	<div align="center">
+		<h1>Agence List</h1>
+		<a href="/newAgence">Create New Agence</a> <br /> <br />
+		<table border="1" cellpadding="10">
+			<thead>
+				<tr>
+					<th>Agence ID</th>
+					<th>Nom</th>
+					<th>Adresse</th>
+					<th>Ville</th>
+					<th>Tel</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="ad : ${agences}">
+					<td th:text="${ad.idAgence}">Client ID</td>
+					<td th:text="${ad.nom}">nom</td>
+					<td th:text="${ad.adresse}">adresse</td>
+	                <td th:text="${ad.ville}">ville</td>
+	                <td th:text="${ad.tel}">tel</td>
+					<td><a href="newAgence">Ajouter</a> 
+					&nbsp;&nbsp;&nbsp; 
+					<a th:href="@{'/editAgence/' + ${ad.idAgence}}">Edit</a>
+					 &nbsp;&nbsp;&nbsp;
+					<a th:href="@{'/deleteAgence/' + ${ad.idAgence}}">Delete</a></td>
+				</tr>
+				
+			</tbody>
+		</table>
+		<div>
+			<a href="/">Return</a>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>Create New Agence</title>
+</head>
+<body>
+	<div align="center">
+		<h1>Create New Agence</h1>
+		<br />
+		<form action="#" th:action="@{/saveAgence}" th:object="${agence}"
+			method="post">
+
+			<table border="0" cellpadding="10">
+				<tr>
+					<td>nom :</td>
+					<td><input type="text" th:field="*{nom}" /></td>
+				</tr>
+				<tr>
+					<td>adresse :</td>
+					<td><input type="text" th:field="*{adresse}" /></td>
+				</tr>
+				<tr>
+					<td>ville :</td>
+					<td><input type="number" th:field="*{ville}" /></td>
+				</tr>
+				<tr>
+					<td>tel :</td>
+					<td><input type="text" th:field="*{tel}" /></td>
+				</tr>
+									
+					<tr>
+					<td colspan="2"><button type="submit">Save assurance</button> </td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>
